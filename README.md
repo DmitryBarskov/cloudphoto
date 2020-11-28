@@ -1,28 +1,47 @@
 # Cloudphoto
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cloudphoto`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Command line utility for managing photos in AWS S3.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install gem from command line:
 
-```ruby
-gem 'cloudphoto'
+```bash
+gem install cloudphoto
 ```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install cloudphoto
 
 ## Usage
 
-TODO: Write usage instructions here
+Add required variables to environment.
+
+### Upload pictures to cloud storage
+
+Uploads all the photos (in jpeg/jpg format) from `path` directory (not recursively)
+and adds them to `album_name` album.
+
+```bash
+cloudphoto upload -p path -a album_name
+```
+
+### Download pictures to have it locally
+
+Downloads all the pictures related to `album_name` album to `path` directory.
+
+```bash
+cloudphoto download -p path -a album_name
+```
+
+### List albums in cloud storage
+
+```bash
+cloudphoto list
+```
+
+### List specific album photos in cloud storage
+
+```bash
+cloudphoto list -a album_name
+```
 
 ## Development
 
@@ -32,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/cloudphoto. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/cloudphoto/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/DmitryBarskov/cloudphoto. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/DmitryBarskov/cloudphoto/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -41,4 +60,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Cloudphoto project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/cloudphoto/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Cloudphoto project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/DmitryBarskov/cloudphoto/blob/master/CODE_OF_CONDUCT.md).
