@@ -12,23 +12,41 @@ gem install cloudphoto
 
 ## Usage
 
-Add required variables to environment.
+#### Configure environment vairables:
+
+```bash
+export AWS_REGION=us-east-1
+```
+see list of available regions [here](https://docs.aws.amazon.com/general/latest/gr/rande.html).
+
+Configure AWS credentials in `~/.aws/credentials`
+(see this [blog post](https://aws.amazon.com/blogs/security/a-new-and-standardized-way-to-manage-credentials-in-the-aws-sdks/)).
+
+Provide bucket name
+```bash
+export CLOUDPHOTO_BUCKET=cloudphoto1
+```
+
+or pass it to executable
+```bash
+CLOUDPHOTO_BUCKET=photos cloudphoto list
+```
 
 ### Upload pictures to cloud storage
 
 Uploads all the photos (in jpeg/jpg format) from `path` directory (not recursively)
-and adds them to `album_name` album.
+and adds them to `album` album.
 
 ```bash
-cloudphoto upload -p path -a album_name
+cloudphoto upload -p path -a album
 ```
 
 ### Download pictures to have it locally
 
-Downloads all the pictures related to `album_name` album to `path` directory.
+Downloads all the pictures related to `album` album to `path` directory.
 
 ```bash
-cloudphoto download -p path -a album_name
+cloudphoto download -p path -a album
 ```
 
 ### List albums in cloud storage
@@ -40,7 +58,7 @@ cloudphoto list
 ### List specific album photos in cloud storage
 
 ```bash
-cloudphoto list -a album_name
+cloudphoto list -a album
 ```
 
 ## Development

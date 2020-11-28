@@ -1,6 +1,5 @@
 require "cloudphoto/version"
+require "cloudphoto/cli"
 
 module Cloudphoto
-  class Error < StandardError; end
-  # Your code goes here...
 end
