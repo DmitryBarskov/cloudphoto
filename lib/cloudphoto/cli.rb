@@ -25,7 +25,8 @@ module Cloudphoto
     end.parse!(args)
 
     Cloudphoto.send(command, **options) if options
-  rescue ArgumentError
+  rescue ArgumentError => e
+    puts e
     Cloudphoto.help(command)
   end
   module_function :cli
